@@ -61,7 +61,9 @@ export async function createInvoice(prevState: State, formData: FormData) {
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');
   } catch (error) {
-    
+    return {
+      message: 'Missing Fields. Failed to Create Invoice.',
+    };
   }
 }
 
